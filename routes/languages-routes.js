@@ -8,7 +8,7 @@ const {
   createLanguage,
   deleteLanguage,
   updateLanguage,
-} = require("../controllers/languages");
+} = require("../controllers/languages-controllers");
 
 router.route("/static").get(getAllLanguagesStatic);
 

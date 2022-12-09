@@ -5,14 +5,12 @@ const serverless = require("serverless-http");
 
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 const connectDB = require("../db/connect");
-const languagesRouter = require("../routes/languages");
+const languagesRouter = require("../routes/languages-route");
 
 app.use(express.json());
 app.use("/api/v1/languages", languagesRouter);
 
-app.use(bodyParser.json());
 app.use("./netlify/functions/server", languagesRouter);
 
 const notFoundMiddleware = require("../middleware/not-found");
